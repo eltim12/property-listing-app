@@ -1,0 +1,11 @@
+{
+  "name": "property-listing-app",
+  "private": true,
+  "scripts": {
+    "api:local": "node scripts/set-api-target.mjs local",
+    "api:deployed": "node scripts/set-api-target.mjs deployed",
+    "api:status": "node scripts/set-api-target.mjs status",
+    "build:hosting": "node scripts/build-hosting.mjs",
+    "deploy:firebase": "node scripts/build-hosting.mjs && firebase deploy --only hosting --project industrialbridge-d9312"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "property-listing-backoffice",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.26.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "axios": "^1.6.2",
+    "chart.js": "^4.5.1",
+    "clsx": "^2.1.1",
+    "pdfmake": "^0.2.7",
+    "tailwind-merge": "^3.6.0",
+    "tailwindcss": "^4.3.3",
+    "vue": "^3.3.4",
+    "vue-chartjs": "^5.3.4",
+    "vue-router": "^4.2.5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.4.0",
+    "vite": "^5.0.0"
+  }
+}

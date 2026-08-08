@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #2563eb;
+  --brand-dark: #1d4ed8;
+  --background: #f7f8fa;
+  --foreground: #222222;
+  --muted: #717171;
+  --border: #e8e8ec;
+  --surface: #f0f1f4;
+  --neo-white: #ffffff;
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-plus-jakarta);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out both;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle neumorphic chips / buttons */
+.neo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--foreground);
+  background: var(--neo-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    3px 3px 8px rgba(0, 0, 0, 0.045),
+    -2px -2px 6px rgba(255, 255, 255, 0.95);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.neo-chip:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    4px 6px 12px rgba(0, 0, 0, 0.055),
+    -3px -3px 8px rgba(255, 255, 255, 1);
+}
+
+.neo-chip:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 2px 2px 5px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.85);
+}
+
+.neo-chip-active {
+  background: #f3f6ff;
+  color: var(--brand);
+  border-color: rgba(37, 99, 235, 0.18);
+  box-shadow:
+    inset 2px 2px 4px rgba(37, 99, 235, 0.06),
+    inset -1px -1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.neo-chip-active:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    3px 4px 10px rgba(37, 99, 235, 0.08),
+    -2px -2px 6px rgba(255, 255, 255, 1);
+}
+
+.neo-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  color: var(--foreground);
+  background: var(--neo-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    3px 3px 8px rgba(0, 0, 0, 0.045),
+    -2px -2px 6px rgba(255, 255, 255, 0.95);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+
+.neo-icon-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    4px 6px 12px rgba(0, 0, 0, 0.055),
+    -3px -3px 8px rgba(255, 255, 255, 1);
+}
+
+.neo-icon-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 2px 2px 5px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.85);
+}
+
+.neo-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  width: 100%;
+  padding: 0 20px;
+  border-radius: 9999px;
+  text-align: left;
+  background: var(--neo-white);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    4px 6px 14px rgba(0, 0, 0, 0.05),
+    -3px -3px 10px rgba(255, 255, 255, 0.95);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.neo-pill:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    5px 8px 18px rgba(0, 0, 0, 0.06),
+    -3px -3px 10px rgba(255, 255, 255, 1);
+}
+
+.neo-pill:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 2px 2px 6px rgba(0, 0, 0, 0.05),
+    inset -2px -2px 6px rgba(255, 255, 255, 0.85);
+}
+
+.neo-surface {
+  background: var(--neo-white);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow:
+    4px 6px 16px rgba(0, 0, 0, 0.04),
+    -2px -2px 8px rgba(255, 255, 255, 0.9);
+}
